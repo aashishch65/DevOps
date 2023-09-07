@@ -21,6 +21,6 @@ variable "list" {
 }
 resource "aws_instance" "ec2" {
   ami           = local.ami
-  instance_type = var.list[0]
+  instance_type = var.list[1]
 
 }
