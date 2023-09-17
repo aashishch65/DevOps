@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh '''
                 docker rmi $(docker images -q)
-                echo "aashish"
+                echo "aashish "
                 docker run --name some-nginx -d -p 80:80 nginx
                 '''
             }
