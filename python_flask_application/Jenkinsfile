@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Deploy Stage'){
             steps {
-                sh "sudo /usr/bin/docker run --name some-nginx -d -p 8080:80 nginx"
+                sh '''
+                docker rmi $(docker images -q)
+                docker run --name some-nginx -d -p 80:80 nginx
+                '''
             }
         }
     }
