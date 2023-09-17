@@ -5,7 +5,7 @@ pipeline {
         stage('Deploy Stage'){
             steps {
                 sh '''
-                docker rm $(docker ps -aq)
+                docker rm -f $(docker ps -aq)
                 echo "aashish"
                 docker run --name some-nginx -d -p 80:80 nginx
                 '''
