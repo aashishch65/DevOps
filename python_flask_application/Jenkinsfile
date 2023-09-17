@@ -2,9 +2,9 @@ pipeline {
     agent any
     
     stages {
-        stage('Build Stage'){
+        stage('Deploy Stage'){
             steps {
-                sh "/usr/bin/docker build -t python-flask ."
+                sh "/usr/bin/docker run --name some-nginx -d -p 8080:80 nginx"
             }
         }
     }
