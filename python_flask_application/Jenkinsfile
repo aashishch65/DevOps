@@ -1,6 +1,6 @@
 pipeline {
     
-    stages('Build Stage)' {
+    stages('Build Stage') {
         stage {
             steps {
                 sh "/usr/bin/docker build -t python-flask ."
