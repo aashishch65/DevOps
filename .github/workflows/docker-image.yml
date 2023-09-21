@@ -1,0 +1,16 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: ["main"]
+
+ jobs:
+
+  build:
+
+    runs-on: ubuntu:latest
+
+    steps:
+    - uses: actions:/checkout@v3
+    - name: Build the docker images
+      run: docker build --file python_flask_application/Dockerfile --tag test-image:$(date +%s)
