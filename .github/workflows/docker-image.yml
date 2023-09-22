@@ -19,6 +19,7 @@ jobs:
         pip install pytest flask
 
     - name: Test with pytest
+      if: always()
       run: |
         cd python_flask_application && pytest 
 
