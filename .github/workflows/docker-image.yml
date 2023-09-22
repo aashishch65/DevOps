@@ -21,7 +21,6 @@ jobs:
     - name: Test with pytest
       if: always()
       continue-on-error: true
-      allow-failure: true
       run: |
         cd python_flask_application && pytest 
 
