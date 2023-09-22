@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the docker images
-      run: docker build --file python_flask_application/Dockerfile --tag test-image:$(date +%s)
+      run: docker build . --file python_flask_application/Dockerfile --tag test-image:$(date +%s)
 
 
 # name: GitHub Actions Demo
