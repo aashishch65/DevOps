@@ -15,7 +15,13 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build the docker images
-      run: cd python_flask_application && docker build . --file Dockerfile --tag test-image:$(date +%s)
+      run: cd python_flask_application && docker build . --file Dockerfile --tag aashishch65/nginx:v1
+
+    - name: List the Docker Images
+      run: docker images
+
+    - name: Push the Docker Image
+      run: docker push aashishch65/nginx:v1
 
 
 
