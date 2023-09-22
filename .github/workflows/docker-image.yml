@@ -5,7 +5,7 @@ jobs:
   Buil-Docker-Image:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions:/checkout@v3
+    - uses: actions/checkout@v3
     - name: Build the docker images
       run: docker build --file python_flask_application/Dockerfile --tag test-image:$(date +%s)
 
