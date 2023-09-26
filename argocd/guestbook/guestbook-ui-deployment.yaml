@@ -3,8 +3,13 @@ kind: Deployment
 metadata:
   name: guestbook-ui
 spec:
-  replicas: 2
-  revisionHistoryLimit: 3
+  replicas: 6
+  #revisionHistoryLimit: 3
+  stratergy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
   selector:
     matchLabels:
       app: guestbook-ui
@@ -14,7 +19,8 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+      #- image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+      - image: nginx
         name: guestbook-ui
         ports:
         - containerPort: 80
