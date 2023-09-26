@@ -5,10 +5,10 @@
 replicaCount: 4
 
 image:
-  repository: nginx
+  repository: aashishch65/nginx
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "d7c94267aa303c0988b443f2cf654b19fe7bc380"
 
 imagePullSecrets: []
 nameOverride: ""
