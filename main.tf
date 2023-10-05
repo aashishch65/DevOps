@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 locals {
-  ami = "ami-051f7e7f6c2f40dc1"
+  ami = "ami-067d1e60475437da2"
 }
 
 variable "list" {
@@ -21,6 +21,6 @@ variable "list" {
 }
 resource "aws_instance" "ec2" {
   ami           = local.ami
-  instance_type = "t2.micro"
+  instance_type = var.list[0]
 
 }
